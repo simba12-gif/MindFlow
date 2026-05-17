@@ -224,10 +224,16 @@ export default function Landing() {
                   </Link>
                 </div>
                 <div className="flex-1 w-full">
-                  <div className="aspect-video glass-panel rounded-2xl flex items-center justify-center" style={{ borderColor: 'rgba(0,219,231,0.2)' }}>
-                    <div className="text-center space-y-4">
-                      <span className="material-symbols-outlined text-6xl" style={{ color: 'rgba(0,219,231,0.4)' }}>analytics</span>
-                      <p className="terminal-text text-xs" style={{ color: '#b9cacb' }}>WELLPULSE DASHBOARD PREVIEW</p>
+                  <div className="aspect-video glass-panel rounded-2xl overflow-hidden border relative group/preview" style={{ borderColor: 'rgba(0,219,231,0.2)' }}>
+                    <img 
+                      src="/analytics.png" 
+                      alt="WellPulse Analytics Dashboard Preview" 
+                      className="w-full h-full object-cover opacity-70 group-hover/preview:opacity-100 group-hover/preview:scale-[1.02] transition-all duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/80 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2 bg-[#060608]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/5 text-[9px] font-bold tracking-widest text-[#00DBE7] uppercase">
+                      <span className="material-symbols-outlined text-[12px] animate-pulse">analytics</span>
+                      LIVE PREVIEW ACTIVE
                     </div>
                   </div>
                 </div>
@@ -278,39 +284,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Platform Stats */}
-      <section className="sticky top-0 py-28 px-10 border-t z-[35] shadow-[0_-20px_50px_rgba(0,0,0,0.85)]"
-        style={{ background: 'rgba(3,3,5,0.75)', backdropFilter: 'blur(28px)', borderColor: 'rgba(255,255,255,0.07)' }}>
-        <div className="ultra-wide">
-          <p className="text-center text-[10px] tracking-[0.6em] terminal-text font-bold mb-16 uppercase" style={{ color: '#00DBE7' }}>
-            PLATFORM METRICS · LIVE TELEMETRY
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 reveal-on-scroll">
-            {[
-              { num: '12,847+', label: 'Students Protected', color: '#00DBE7', glow: 'rgba(0,219,231,0.35)' },
-              { num: '94.2%', label: 'Prediction Accuracy', color: '#D2FF00', glow: 'rgba(210,255,0,0.35)' },
-              { num: '200+', label: 'Institutions Active', color: '#e1fdff', glow: 'rgba(225,253,255,0.2)' },
-              { num: '3.2M', label: 'Check-ins Analyzed', color: '#c084fc', glow: 'rgba(192,132,252,0.35)' },
-            ].map((s, i) => (
-              <div key={i} className="text-center group" style={{ animationDelay: `${i * 120}ms` }}>
-                <div className="font-bold mb-3 transition-all duration-700 group-hover:scale-105"
-                  style={{
-                    fontFamily: 'Space Grotesk',
-                    fontSize: 'clamp(38px,5vw,68px)',
-                    color: s.color,
-                    letterSpacing: '-0.04em',
-                    textShadow: `0 0 40px ${s.glow}`,
-                  }}>
-                  {s.num}
-                </div>
-                <div className="text-[11px] tracking-[0.35em] terminal-text font-semibold uppercase" style={{ color: 'rgba(185,202,203,0.55)' }}>
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
 
       {/* CTA */}

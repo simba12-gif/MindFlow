@@ -196,7 +196,7 @@ export default function Resources() {
               <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 bg-zinc-950 relative flex items-center justify-center">
                 <iframe 
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/QzB5aY5gM9k?autoplay=1" 
+                  src="https://www.youtube.com/embed/sA0uwuCA9d0?autoplay=1" 
                   title="YouTube video player" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
